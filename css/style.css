@@ -1,0 +1,390 @@
+@import url('default.css');
+
+body{
+    font-family: 'Noto Sans KR', sans-serif;
+    overflow-x: hidden;
+}
+section>h1>a{
+    font-family: 'Black Han Sans', sans-serif;
+}
+
+
+
+
+/* header 부분 */
+header{
+    width: 100%;
+    height: 50px;
+    position: absolute;
+    left: 0px;
+    top: 0px; 
+    z-index: 9999;
+    background: transparent;
+    padding-top: 15px;
+}
+header.fix{
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 9999;
+    background: transparent;
+    width: 100%;
+    height: 50px;
+}
+header>.innerbox{
+    width:100%;
+    max-width: 1200px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 100px;
+    margin: 0 auto;
+}
+header>.innerbox>h1{
+    font-size: 1.6rem;
+}
+header>.innerbox a{
+    color: #151515;
+}
+header>.innerbox #check{
+    display: none;
+}
+header>.innerbox label{
+    position: relative;
+    display: block;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 2;
+}
+header>.innerbox label span{
+    position: absolute;
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: black;
+    border-radius: 2px;
+    transition: all .4;
+}
+#check:checked+label span:nth-child(1){
+    top: 50%;
+    transform: translate(0, -50%);
+    transform: rotate(45deg);
+}
+#check+label span:nth-child(2){
+    top: 50%;
+    transform: translate(0, -50%);
+}
+#check:checked+label span:nth-child(2){
+    opacity: 0;
+}
+#check+label span:nth-child(3){
+    bottom: 0;
+}
+#check:checked+label span:nth-child(3){
+    top: 50%;
+    transform: translate(0, -50%);
+    transform: rotate(-45deg);
+}
+#menu{
+    position: fixed;
+    width: 180px;
+    height: 100%;
+    background-color: rgba(0,0,0,0.8);
+    right: -180px;
+    transition: all .3s;
+    z-index: 1;
+    top: 0px;
+    padding: 60px 20px;
+    box-sizing: border-box;
+}
+#check:checked+label+#menu{
+    right: 0;
+}
+#menu li{
+    font-size: 1.3rem;
+    margin-bottom: 20px;
+}
+#menu li a{
+    color: #fff;
+    font-weight: 600;
+}
+
+
+/* Main */
+#Home{
+    width: 100%;
+    height: 36rem;
+    position: relative;
+}
+#Home .box{
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    line-height: 3.4rem;
+}
+#Home span{
+    position: relative;
+    font-size: 40px;
+    text-align: center;
+    font-weight: 500;
+}
+#Home .br{
+    display: none;
+}
+#Home .font{
+    font-family: 'Black Han Sans', sans-serif;
+}
+#Home .font:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background-color: #fff;
+    border-left: 2px solid #151515;
+    animation: animate 4s steps(12) infinite;
+}
+
+@keyframes animate {
+    40%, 60%{
+        left: 100%;
+    }
+    100%{
+        left: 0%;
+    }
+}
+
+
+
+
+/* About */
+#About{
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+    background: #e6e6e6;
+}
+#About>h1{
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 35px;
+}
+#About .info_wrap{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 25px;
+    align-items: center;
+}
+#About .info_wrap .info{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+}
+#About .info_wrap .info>div{
+    width: 50%;
+}
+#About .info_wrap p{
+    font-size: 18px;
+}
+
+
+/* Skill */
+#Skill{
+    width: 100%;
+    height: auto;
+    padding: 50px 0;
+}
+#Skill>h1{
+    padding-top:30px;
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 35px;
+}
+#Skill .skill-box{
+    box-sizing: border-box;
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    background: rgb(145, 130, 255);
+    border-radius: 30px;
+    display: flex;
+    flex-flow: row wrap;
+    padding: 10px;
+}
+#Skill .skill-box>div{
+    margin: 20px 0;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 30px;
+}
+#Skill .skill-box>div>div:last-child{
+    display: none;
+}
+#Skill img{
+    width: 80px;
+    height: 80px;
+}
+
+
+/* Project */
+#Project{
+    width: 100%;
+    padding: 50px 0;
+}
+#Project>h1{
+    padding-top:30px;
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 35px;
+}
+#Project .container{
+    margin: 0 auto;
+    width: 80%;
+    height: 100%;
+    background: rgb(158, 255, 244);
+    border-radius: 30px;
+    display: flex;
+    flex-flow: column wrap;
+    padding: 15px;
+    margin-bottom: 50px;
+}
+
+
+#Project img{
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 50px;
+}
+#Project span{
+    font-weight: 700;
+}
+#Project p{
+    margin-bottom: 10px;
+}
+
+
+
+@media screen and (min-width:768px) {/* tablet */
+    
+    #Skill>h1{
+        padding-top:30px;
+        font-size: 2.4rem;
+        text-align: center;
+        margin-bottom: 35px;
+    }
+    #Skill .skill-box{
+        width: 100%;
+        padding: 20px;
+        background: none;
+        justify-content: center;
+
+    }
+    #Skill .skill-box>div{
+        width: 50%;
+        max-width: 500px;
+        display: flex;
+        flex-flow: row nowrap;
+        gap: 30px;
+    }
+    #Skill .skill-box>div>div:last-child{
+        display: block;
+    }
+    #Skill .skill-box>div>div:last-child>p:nth-of-type(1){
+        font-weight: 700;
+    }
+
+    /* Project */
+    #Project p{
+        font-size: 18px;
+    }
+    #Project .container{
+        width: 80%;
+        flex-flow: row nowrap;
+        gap: 30px;
+    }
+    #Project .contaienr>.imgbox{
+        width: 600px;
+        height: auto;
+    }
+    #Project img{
+        max-width: 800px;
+        min-height: 200px;
+        margin-bottom: 0;
+    }
+    #Project span{
+        font-weight: 800;
+    }
+}
+
+@media screen and (min-width:1200px) { /* desktop */
+    /* header */
+    header>.innerbox{
+        justify-content: space-between;
+    }
+    header>.innerbox label{
+        display: none;
+    }
+    #menu{
+        position: static;
+        padding: 0px;
+        background: none;
+        width: auto;
+        height: 44px;
+    }
+    #menu ul{
+        display: flex;
+        gap: 40px;
+        align-items: center;
+    }
+    #menu li a{
+        color: #151515;
+    }
+
+
+    /* About */
+    #About{
+        box-sizing: border-box;
+        padding: 50px 50px;
+    }
+    #About .info_wrap{
+        flex-flow: row wrap;
+        justify-content: center;
+    }
+    #About .info_wrap>.info{
+        max-width: 400px;
+    }
+
+    #About .info_wrap p{
+        font-size: 20px;
+    }
+
+
+    /* Skill */
+    #Skill p{
+        font-size: 22px;
+    }
+
+    /* Project */
+    #Project p{
+        font-size: 22px;
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
